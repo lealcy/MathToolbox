@@ -26,7 +26,7 @@ MathToolbox.midpoint = function(x1, y1, x2, y2) {
 }
 
 // Check if two lines intersect
-mathtoolbox.doLinesIntersect = function(x1, y1, x2, y2, x3, y3, x4, y4) {
+MathToolbox.doLinesIntersect = function(x1, y1, x2, y2, x3, y3, x4, y4) {
     if (x1 == x2) {
         return !(x3 == x4 && x1 != x3);
     } 
