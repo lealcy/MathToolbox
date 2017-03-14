@@ -27,12 +27,12 @@ MathToolbox.midpoint = function(x1, y1, x2, y2) {
 
 // Check if two lines intersect
 MathToolbox.doLinesIntersect = function(x1, y1, x2, y2, x3, y3, x4, y4) {
-    if (x1 == x2) {
-        return !(x3 == x4 && x1 != x3);
-    } 
-    if (x3 == x4) {
-        return true;
-    } 
-    // Both lines are not parallel to the y-axis
-    return (y1-y2)/(x1-x2) !== (y3-y4)/(x3-x4);
+    let s1x = x2 - x1;
+    let s1y = y2 - y1;
+    let s2x = x4 - x3;
+    let s2y = y4 - y3;
+    let s = (-s1y * (x1 - x3) + s1x * (y1 - y3)) / (-s2x * s1y + s1x * s2y);
+    let t = (s2x * (y1 - y3) - s2y * (x1 - x3)) / (-s2x * s1y + s1x * s2y);
+    
+    return s >= 0 && s <= 1 && t >= 0 && t <= 1;
 }
