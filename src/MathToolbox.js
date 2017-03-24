@@ -38,7 +38,7 @@ MathToolbox.doLinesIntersect = function(x1, y1, x2, y2, x3, y3, x4, y4) {
 }
 
 // Get the hashcode of a string
-Mathtoolbox.getHash = function(s) {
+MathToolbox.getHash = function(s) {
     let hashedValue = 3074457345618258791;
     for (let i = 0; i < s.length; i++) {
         hashedValue += s[i];
@@ -47,3 +47,7 @@ Mathtoolbox.getHash = function(s) {
     return hashedValue;
 }
 
+// Returns a random integer between min and max, exclusive.
+MathToolBox.getRandomInt = function(min, max) {
+    return Math.floor(Math.random() * (max - min)) + min;
+}
