@@ -36,3 +36,14 @@ MathToolbox.doLinesIntersect = function(x1, y1, x2, y2, x3, y3, x4, y4) {
     
     return s >= 0 && s <= 1 && t >= 0 && t <= 1;
 }
+
+// Get the hashcode of a string
+Mathtoolbox.getHash = function(s) {
+    let hashedValue = 3074457345618258791;
+    for (let i = 0; i < s.length; i++) {
+        hashedValue += s[i];
+        hashedValue *= 3074457345618258799;
+    }
+    return hashedValue;
+}
+
